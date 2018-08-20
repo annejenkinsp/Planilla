@@ -9,7 +9,10 @@
 <body>
 	<header class="flex"><img src="img/Escudo.png">
 	<h1> Bienvenido al programa de asistencias Colsam </h1></header>
-	<main class="flex"><h1> Seleccione el grado. </h1>
+	
+  <main class="flex"><h1> Seleccione el grado. </h1>
+    <form action="resultados.php" method="post">
+
 	<select class="grado">
   <option value="primero">Primero</option>
   <option value="segundo">Segundo</option>
@@ -23,7 +26,6 @@
   <option value="decimo">Décimo</option>
   <option value="undecimo">Undécimo</option>
 </select>
-		<form action="resultados.html" method="post">
     <div>
  <input type="submit" class="enviar" value="Escoger">    </div>
 </form>
