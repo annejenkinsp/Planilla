@@ -13,9 +13,9 @@ echo $_POST['grado'];
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Nombre</th>
+   
     </tr>
   </thead>
   <tbody>
