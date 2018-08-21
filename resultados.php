@@ -1,3 +1,11 @@
+<?php
+include "conexion.php";
+include "planilla.php";
+session_start();
+if (!isset($_SESSION['Planilla'])) {
+  $_SESSION = new Planilla;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -7,9 +15,7 @@
 </head>
 <body>
 <?php
-echo $_POST['grado'];
-
-
+echo $_SESSION['Planilla']->buscarMat("asd");
 
 ?>
 
