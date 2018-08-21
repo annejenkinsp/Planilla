@@ -5,7 +5,7 @@ class ConexionMySQL
     private $host = 'localhost';
     private $user = 'root';
     private $pass = '';
-    private $bd = 'siacsoft';
+    private $bd = 'planilla';
     public function __construct()
     {
         $this->sql = new mysqli($this->host ,$this->user,$this->pass,$this->bd);

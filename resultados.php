@@ -3,7 +3,7 @@ include "conexion.php";
 include "planilla.php";
 session_start();
 if (!isset($_SESSION['Planilla'])) {
-  $_SESSION = new Planilla;
+  $_SESSION['Planilla'] = new Planilla();
 }
 ?>
 <!DOCTYPE html>
@@ -14,10 +14,7 @@ if (!isset($_SESSION['Planilla'])) {
 	<title>Planilla</title>
 </head>
 <body>
-<?php
-echo $_SESSION['Planilla']->buscarMat("asd");
 
-?>
 
 <table class="table">
   <thead class="thead-dark">
@@ -25,10 +22,18 @@ echo $_SESSION['Planilla']->buscarMat("asd");
       <th scope="col">#</th>
       <th scope="col">Apellido</th>
       <th scope="col">Nombre</th>
-   
+      <?php
+        $_SESSION['Planilla']->conteo($_POST['grado']);
+      ?>
     </tr>
   </thead>
   <tbody>
+    <tr>
+    <?php
+$_SESSION['Planilla']->mostrarTabla($_POST['grado']);
+
+?>
+</tr>
     </tbody>
 </table>
 

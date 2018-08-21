@@ -1,26 +1,26 @@
 <?php
-Class Planilla{   public function buscarMat($buscar)
-    {
+Class Planilla{
+   public function mostrarTabla($grado){
+   	$i = 0;
         $link = new ConexionMySQL();
-        $sql = "SELECT * FROM curso WHERE curso.Nombre LIKE '" . $buscar . "%'";
+        $sql = "SELECT * FROM ".$grado;
         $res = $link->getSql()->query($sql);
-        while ($res1 = $res->fetch_assoc()) {
-            echo "
-        <div class=\"panel panel-primary\">
-            <div style=\"background-color: #0099FF\" class=\"panel-heading\">Información del curso</div>
-            <div class=\"panel-body\">
-        
-        <div style='position: relative; float: left'>
-        <span style='font-family: Source Sans Pro, sans-serif; position: relative; left: 15px; color: black'>
-        <b>Codigo:</b>" . $res1['Codigo'] . ", <b>Nombre: </b>" . $res1['Nombre'] . ", <b>Observaciones: </b>" . $res1['Observaciones'] . "<br><br>
-        </div>
-        </span>
-        </div>
-        </div>
-      
-        </br><br>";
-        }
-    }
-}
 
+        while($row = $res->fetch_assoc()){
+		echo "<td>".$row['#']. "</td>";
+		echo "<td>".$row['Apellidos']."</td>";
+		echo "<td>".$row['Nombres']."</td>";
+      
+	}
+}
+	public function conteo($grado){
+		$link = new ConexionMySQL();
+        $sql = "SELECT * FROM ".$grado;
+        $res = $link->getSql()->query($sql);
+        $conteo = $res->field_count;
+        for ($i=1; $i<=$conteo-3 ; $i++) { 
+        	echo "<th scope='col'>".$i."</th>";
+        }
+	}
+}
 ?>
