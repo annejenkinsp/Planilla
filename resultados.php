@@ -22,10 +22,12 @@ if (!isset($_SESSION['Planilla'])) {
       <th scope="col">#</th>
       <th scope="col">Apellido</th>
       <th scope="col">Nombre</th>
+
       <?php
         $_SESSION['Planilla']->conteo($_POST['grado']);
       ?>
     </tr>
+
   </thead>
   <tbody>
     <tr>

@@ -10,8 +10,16 @@ Class Planilla{
 		echo "<td>".$row['#']. "</td>";
 		echo "<td>".$row['Apellidos']."</td>";
 		echo "<td>".$row['Nombres']."</td>";
-      
+		echo "<td>".$row['1']."</td>";
+		echo "<td>".$row['2']."</td>";
+        echo "<td>".$row['3']."</td>";
+		echo "<td>".$row['4']."</td>";
+		echo "<td>".$row['5']."</td>";
+		echo "<td>".$row['6']."</td>";
 	}
+	
+  
+
 }
 	public function conteo($grado){
 		$link = new ConexionMySQL();
