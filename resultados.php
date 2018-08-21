@@ -8,7 +8,11 @@
 <body>
 <?php
 echo $_POST['grado'];
+
+
+
 ?>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
